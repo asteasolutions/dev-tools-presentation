@@ -1,5 +1,9 @@
-.slides section {
+.slides > section {
     background: url(../img/logo.png) no-repeat right bottom;
+}
+
+.slides section:first-of-type h2 {
+    color: orange !important;
 }
 
 .default .reveal .state-background {
