@@ -3,4 +3,4 @@ window.addEventListener('input', function (event) {
   console.log('input listener executed', event.target.valueAsNumber); //test event propagation
   //var $ = document.querySelector.bind(document);
   //$('#result').value = $('#a').valueAsNumber + $('#b').valueAsNumber;
-}, false);​
+}, false);
