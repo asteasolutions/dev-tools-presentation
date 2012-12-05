@@ -37,15 +37,24 @@ function resizeImage(image) {
 function showFullPhoto(url) {
     // Show the overlay.
     var overlay = $('.overlay');
+
     overlay.innerHTML = '';
     var img = overlay.appendChild(document.createElement('img'));
-    img.src = url;
-    overlay.hidden = false;
-    setTimeout(function() { overlay.classList.remove('hidden'); });
-
     window.addEventListener('resize', function(e) {
         resizeImage(img);
     });
+    /*var img = overlay.querySelector('img');
+    if (!img) {
+        img = overlay.appendChild(document.createElement('img'));
+
+        window.addEventListener('resize', function(e) {
+            resizeImage(img);
+        });
+    }*/
+
+    img.src = url;
+    overlay.hidden = false;
+    setTimeout(function() { overlay.classList.remove('hidden'); });
 }
 
 function stopAnimation(node) {
@@ -60,6 +69,7 @@ function update() {
     var addedCount = 0;
 
     var scrollTop = $('body').scrollTop;
+
     //var listHeight = photoList.clientHeight;
 
     while (true) {
@@ -72,6 +82,7 @@ function update() {
             break;
         addPhoto(photoList, true);
         ++addedCount;
+
         //listHeight += PHOTO_HEIGHT;
     }
 
